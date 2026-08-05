@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 
-declare module 'plotly.js-basic-dist-min'
+declare module 'plotly.js-dist-min'
 
 declare module 'react-plotly.js/factory' {
   import type { ComponentType } from 'react'

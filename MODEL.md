@@ -26,7 +26,7 @@ P_avg,coh = (1 - r_ASE) P_avg,total
 P_peak = P_avg,coh / [q + (1-q)<g>]
 ```
 
-The mean is evaluated on the full one-period numerical grid. At 100 mW, 300 MHz, 30 ps Gaussian intensity FWHM, zero ASE, and 20 dB extinction, this gives approximately 5.13 W rather than the pedestal-free 10.44 W value.
+The mean is evaluated on the full one-period numerical grid. At 100 mW, 300 MHz, 30 ps Gaussian intensity FWHM, zero ASE, and 20 dB extinction, this gives approximately 5.13 W rather than the pedestal-free 10.44 W value. The current interface default is 30 dB extinction; the 20 dB case is retained as a regression reference.
 
 Pulse energy above pedestal is `(P_peak-P_off)<g>/f_rep`.
 

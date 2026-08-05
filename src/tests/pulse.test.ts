@@ -3,9 +3,14 @@ import { defaultConfig } from '../app/defaults'
 import { createTimeGrid, inferPower, pulseIntensity } from '../physics/pulse'
 
 describe('pulse and average-power model', () => {
-  it('reproduces the physically consistent default peak power', () => {
+  it('reproduces the physically consistent 20 dB reference peak power', () => {
     const grid = createTimeGrid(defaultConfig.source.repetitionRateHz, 65536)
-    expect(inferPower(defaultConfig.source, grid).peakPowerW).toBeCloseTo(5.13, 2)
+    const referenceSource = { ...defaultConfig.source, extinctionRatioDb: 20 }
+    expect(inferPower(referenceSource, grid).peakPowerW).toBeCloseTo(5.13, 2)
+  })
+
+  it('uses 30 dB as the application default extinction ratio', () => {
+    expect(defaultConfig.source.extinctionRatioDb).toBe(30)
   })
 
   it.each([['gaussian', 1], ['superGaussian', 3]] as const)('uses intensity FWHM for %s pulses', (shape, order) => {

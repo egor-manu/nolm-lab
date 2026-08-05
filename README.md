@@ -31,8 +31,10 @@ The production files are emitted to `dist/`. No backend or database is used.
 - A lossless complex-amplitude coupler with arbitrary power cross-coupling `κ`.
 - A coupler-adjacent lumped VOA encountered before fibre in one direction and after fibre in the other.
 - Dispersion-free Kerr propagation with optional fibre attenuation.
-- Both external ports, time and spectral results, CW-only routing, pulse transmission, contrast, phase diagnostics, parameter sweeps, and optional stochastic complex ASE ensembles.
+- Both external ports, time and spectral results, CW-only routing, pulse transmission, contrast, phase diagnostics, one- and two-parameter sweeps, and optional stochastic complex ASE ensembles.
 - Generic editable SMF28-like and HNLF-like engineering presets.
+
+The application default EOM extinction ratio is 30 dB. The documented 5.13 W validation case remains available by setting the extinction ratio to 20 dB.
 
 The temporal FWHM and reference spectral FWHM are deliberately independent. The imposed-bandwidth mode constructs one assumed quadratic phase; it does not claim a unique field.
 

@@ -1,5 +1,5 @@
 import createPlotlyComponent from 'react-plotly.js/factory'
-import Plotly from 'plotly.js-basic-dist-min'
+import Plotly from 'plotly.js-dist-min'
 import type { Data, Layout } from 'plotly.js'
 
 const Plot = createPlotlyComponent(Plotly)

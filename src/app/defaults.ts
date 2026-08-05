@@ -11,7 +11,7 @@ export const defaultConfig: LabConfig = {
     repetitionRateHz: 300 * MHz,
     averagePowerW: 100 * mW,
     aseFraction: 0,
-    extinctionRatioDb: 20,
+    extinctionRatioDb: 30,
     pulseFwhmS: 30 * ps,
     pulseShape: 'gaussian',
     superGaussianOrder: 3,
