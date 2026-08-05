@@ -1,0 +1,16 @@
+import { describe, expect, it } from 'vitest'
+import { defaultConfig } from '../app/defaults'
+import { createTimeGrid, inferPower, pulseIntensity } from '../physics/pulse'
+
+describe('pulse and average-power model', () => {
+  it('reproduces the physically consistent default peak power', () => {
+    const grid = createTimeGrid(defaultConfig.source.repetitionRateHz, 65536)
+    expect(inferPower(defaultConfig.source, grid).peakPowerW).toBeCloseTo(5.13, 2)
+  })
+
+  it.each([['gaussian', 1], ['superGaussian', 3]] as const)('uses intensity FWHM for %s pulses', (shape, order) => {
+    const width = 30e-12
+    expect(pulseIntensity(width / 2, width, shape, order)).toBeCloseTo(0.5, 13)
+    expect(pulseIntensity(-width / 2, width, shape, order)).toBeCloseTo(0.5, 13)
+  })
+})
